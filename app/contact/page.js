@@ -80,9 +80,9 @@ export default function Contact() {
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-blue-600"
+                      className="w-5 h-5 text-blue-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -117,9 +117,9 @@ export default function Contact() {
 
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-green-600"
+                      className="w-5 h-5 text-blue-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -142,9 +142,9 @@ export default function Contact() {
 
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-purple-600"
+                      className="w-5 h-5 text-blue-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
