@@ -135,7 +135,7 @@ export default function Navbar() {
 
                       {/* Desktop Dropdown */}
                       <div
-                        className={`absolute top-full left-0 mt-1 w-80 bg-white rounded-md shadow-lg border border-gray-200 transition-all duration-200 ${
+                        className={`absolute top-full left-0 mt-1 w-96 bg-white rounded-md shadow-lg border border-gray-200 transition-all duration-200 ${
                           isServicesDropdownOpen
                             ? "opacity-100 visible transform translate-y-0"
                             : "opacity-0 invisible transform -translate-y-2"
@@ -251,7 +251,7 @@ export default function Navbar() {
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="pl-6 space-y-1">
+                    <div className="pl-6 space-y-1 max-h-32 overflow-y-auto">
                       {item.dropdownItems.map((dropdownItem) => {
                         const isDropdownActive = pathname === dropdownItem.href;
                         return (
