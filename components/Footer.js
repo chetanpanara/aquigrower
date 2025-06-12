@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8">
           {/* Contact Section */}
           <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
@@ -77,7 +77,7 @@ const Footer = () => {
           {/* Navigate Section */}
           <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
-              Navigate
+              Quick Links
             </h3>
             <nav className="space-y-3">
               <Link
@@ -198,7 +198,7 @@ const Footer = () => {
           </div>
 
           {/* Follow Us Section */}
-          <div className="lg:col-span-1">
+          {/* <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
               Follow Us
             </h3>
@@ -236,7 +236,7 @@ const Footer = () => {
                 Twitter
               </Link>
             </nav>
-          </div>
+          </div> */}
         </div>
 
         {/* Footer Bottom */}
