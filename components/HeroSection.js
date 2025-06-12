@@ -24,7 +24,7 @@ const HeroSection = () => {
           <div className="text-white space-y-4 lg:space-y-4">
             {/* Main heading */}
             <h1 className="text-3xl sm:text-6xl lg:text-6xl xl:text-6xl font-bold leading-tight">
-              Hii,I am Dr. Nalin K Pagi
+              AquiGrower Private Limited
               <br />
               <span className="text-green-400 typing-effect">
                 Family Farmer
@@ -33,10 +33,10 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="text-md sm:text-lg text-gray-200 leading-relaxed mx-auto max-w-3xl">
-              Seeking a challenging role as a Farming Consultant where my
-              expertise can contribute to organizational growth and drive
-              sustainable agricultural development for the betterment of
-              society.
+              The organization is deeply committed to sustainable agricultural
+              practices and environmental stewardship, focusing on providing for
+              basic human needs while promoting ecological balance and community
+              awareness.
             </p>
 
             <a

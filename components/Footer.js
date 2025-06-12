@@ -81,37 +81,37 @@ const Footer = () => {
             </h3>
             <nav className="space-y-3">
               <Link
-                href="/services"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Home
               </Link>
               <Link
-                href="/success-stories"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 About Us
               </Link>
               <Link
-                href="/discover"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Services
               </Link>
               <Link
-                href="/discover"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Projects
               </Link>
               <Link
-                href="/care"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Blogs
               </Link>
               <Link
-                href="/download-app"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Contact Us
@@ -126,31 +126,31 @@ const Footer = () => {
             </h3>
             <nav className="space-y-3">
               <Link
-                href="/get-in-touch"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Sustainable Agriculture & Organic Farming
               </Link>
               <Link
-                href="/technology"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Hydroponics for Traditional, Exotics, and Medicinal Herbs
               </Link>
               <Link
-                href="/technology"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Ecological Restoration & Afforestation
               </Link>
               <Link
-                href="/who-we-are"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Extension Activity & Awareness
               </Link>
               <Link
-                href="/expertise"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Biodiversity Awareness & Citizen Science Initiatives
@@ -165,31 +165,31 @@ const Footer = () => {
             </h3>
             <nav className="space-y-3">
               <Link
-                href="/latest-news"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Latest News
               </Link>
               <Link
-                href="/new-arrivals"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 New Arrivals
               </Link>
               <Link
-                href="/solution"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Solution
               </Link>
               <Link
-                href="/gain-profession"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Gain Profession
               </Link>
               <Link
-                href="/career"
+                href=""
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Career
@@ -243,7 +243,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div className="text-gray-500 text-sm">
-              ©2025 aquigrower, All rights reserved.
+              ©2025 aquigrower LLP, All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <Link
