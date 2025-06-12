@@ -6,9 +6,9 @@ const Footer = () => {
     <footer className="bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6 lg:gap-8">
           {/* Contact Section */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
               Contact Us
             </h3>
@@ -84,64 +84,76 @@ const Footer = () => {
                 href="/services"
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
-                Services
+                Home
               </Link>
               <Link
                 href="/success-stories"
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
-                Success Stories
+                About Us
               </Link>
               <Link
                 href="/discover"
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
-                Discover
+                Services
+              </Link>
+              <Link
+                href="/discover"
+                className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
+              >
+                Projects
               </Link>
               <Link
                 href="/care"
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
-                Care
+                Blogs
               </Link>
               <Link
                 href="/download-app"
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
-                Download App
+                Contact Us
               </Link>
             </nav>
           </div>
 
           {/* Solution Section */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
-              Solution
+              Our Services
             </h3>
             <nav className="space-y-3">
               <Link
                 href="/get-in-touch"
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
-                Get in Touch
+                Sustainable Agriculture & Organic Farming
               </Link>
               <Link
                 href="/technology"
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
-                Technology
+                Hydroponics for Traditional, Exotics, and Medicinal Herbs
+              </Link>
+              <Link
+                href="/technology"
+                className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
+              >
+                Ecological Restoration & Afforestation
               </Link>
               <Link
                 href="/who-we-are"
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
-                Who're We?
+                Extension Activity & Awareness
               </Link>
               <Link
                 href="/expertise"
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
-                Expertise
+                Biodiversity Awareness & Citizen Science Initiatives
               </Link>
             </nav>
           </div>
@@ -149,7 +161,7 @@ const Footer = () => {
           {/* Discover Section */}
           <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
-              Discover
+              Our Projects
             </h3>
             <nav className="space-y-3">
               <Link
