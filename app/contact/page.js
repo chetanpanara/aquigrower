@@ -46,36 +46,21 @@ export default function Contact() {
 
   return (
     <>
-     {/* Header Section */}
-        <div
-          className="bg-cover bg-center text-white py-16 opacity-90"
-          style={{
-            backgroundImage: "url('/img/contact2.jpg')",
-          }}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold my-4 mt-6">Contact Us</h1>
-            <p className="text-md text-gray-50 max-w-2xl mx-auto">
-          Let's contact us & build something great together.
-            </p>
-          </div>
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            Get In Touch
+          </h2>
+          <p className="text-md text-gray-600 mb-8">
+            Have a question or want to work together? We're here to help and
+            would love to hear from you.
+          </p>
         </div>
 
-        {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-12">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Get In Touch
-              </h2>
-              <p className="text-md text-gray-600 mb-8">
-                Have a question or want to work together? We're here to help and
-                would love to hear from you.
-              </p>
-            </div>
-
             {/* Contact Details */}
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
