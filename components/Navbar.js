@@ -39,7 +39,7 @@ export default function Navbar() {
       ],
     },
     { name: "Projects", href: "/projects" },
-    { name: "Blogs", href: "/blog" },
+    { name: "Blogs", href: "/blogs" },
     { name: "Gallary", href: "/gallary" },
     { name: "Contact", href: "/contact" },
   ];
