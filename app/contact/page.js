@@ -53,7 +53,7 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-md text-gray-600 mb-8">
-            Have a question or want to work together? We're here to help and
+            Have a question or want to work together? We are here to help and
             would love to hear from you.
           </p>
         </div>
