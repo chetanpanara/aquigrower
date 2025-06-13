@@ -39,7 +39,8 @@ export default function Navbar() {
       ],
     },
     { name: "Projects", href: "/projects" },
-    { name: "Blog", href: "/blog" },
+    { name: "Blogs", href: "/blog" },
+    { name: "Gallary", href: "/gallary" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -80,7 +81,7 @@ export default function Navbar() {
   return (
     <nav className="bg-white fixed w-full top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:justify-center md:relative">
+        <div className="flex justify-between items-center h-18 md:justify-center md:relative">
           {/* Logo - positioned absolutely on desktop to keep menu centered */}
           <div className="flex-shrink-0 md:absolute md:left-0 flex items-center space-x-2">
             <Link href="/" className="flex items-center mx-4">
