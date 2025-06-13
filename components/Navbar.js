@@ -79,7 +79,7 @@ export default function Navbar() {
   const isServicesActive = pathname.startsWith("/services");
 
   return (
-    <nav className="bg-white fixed w-full top-0 z-50 shadow-sm">
+    <nav className="bg-white/60 backdrop-blur-md fixed w-full rounded-b-2xl top-0 z-50 border-b border-gray-100/30 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-18 md:justify-center md:relative">
           {/* Logo - positioned absolutely on desktop to keep menu centered */}
@@ -88,9 +88,9 @@ export default function Navbar() {
               <img
                 src="./img/logo.png"
                 alt="AquiGrower Logo"
-                className="h-15 w-15"
+                className="h-15 w-15 lg:hidden md:block "
               />
-              <span className="text-2xl hidden lg:block font-bold bg-gradient-to-tr from-white via-green-400 to-green-900 bg-clip-text text-transparent ml-2">
+              <span className="text-2xl lg:block md:hidden font-bold bg-gradient-to-tr from-green-400 via-green-600 to-green-800 bg-clip-text text-transparent ml-2">
                 AquiGrower
               </span>
             </Link>
