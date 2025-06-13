@@ -46,18 +46,6 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  const goToSlide = (index) => {
-    setCurrentVideo(index);
-  };
-
-  const nextSlide = () => {
-    setCurrentVideo((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentVideo((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
   return (
     <div className="min-h-screen relative overflow-hidden h-screen">
       {/* Video Slider */}

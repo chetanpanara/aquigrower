@@ -82,18 +82,22 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:justify-center md:relative">
           {/* Logo - positioned absolutely on desktop to keep menu centered */}
-          <div className="flex-shrink-0 md:absolute md:left-0">
-            <Link
-              href="/"
-              className="text-2xl font-bold bg-gradient-to-tr from-white via-green-400 to-green-900 bg-clip-text text-transparent"
-            >
-              AquiGrower
-            </Link>
-          </div>
+                <div className="flex-shrink-0 md:absolute md:left-0 flex items-center space-x-2">
+                <Link href="/" className="flex items-center">
+                  <img
+                  src="./img/logo.png"
+                  alt="AquiGrower Logo"
+                  className="h-15 w-15"
+                  />
+                  <span className="text-2xl font-bold bg-gradient-to-tr from-white via-green-400 to-green-900 bg-clip-text text-transparent ml-2">
+                  AquiGrower
+                  </span>
+                </Link>
+                </div>
 
-          {/* Desktop Menu - centered */}
+                {/* Desktop Menu - centered */}
           <div className="hidden md:block">
-            <div className="flex items-baseline space-x-4">
+            <div className="flex items-baseline space-x-2">
               {menuItems.map((item) => {
                 const isActive =
                   item.href === "/"
