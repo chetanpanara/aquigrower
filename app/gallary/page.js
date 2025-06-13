@@ -176,7 +176,7 @@ const GalleryPage = () => {
               onClick={() => setActiveFilter(category.key)}
               className={`px-3 py-2 md:px-5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                 activeFilter === category.key
-                  ? "bg-green-600 text-white shadow-lg"
+                  ? "bg-green-600 text-white shadow-sm"
                   : "bg-white text-gray-700 hover:bg-green-50 border border-green-200"
               }`}
             >
