@@ -48,11 +48,16 @@ export default function Contact() {
     <>
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16">
+
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">
-            Get In Touch
-          </h2>
-          <p className="text-md text-gray-600 mb-8">
+          <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
+            <span className="text-gray-800">LETS </span>
+            <span className="text-green-500 relative">
+              COLLABORATE
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
+            </span>
+          </h1>
+          <p className="text-md text-gray-600 mt-6">
             Have a question or want to work together? We are here to help and
             would love to hear from you.
           </p>

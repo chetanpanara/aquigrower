@@ -160,10 +160,15 @@ const GalleryPage = () => {
     <>
       {/* Filter Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16">
-
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Gallery</h2>
-          <p className="text-md text-gray-600 mb-8">
+          <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
+            <span className="text-gray-800">Gallery </span>
+            <span className="text-green-500 relative">
+              Photos
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
+            </span>
+          </h1>
+          <p className="text-md text-gray-600 mt-6">
             A visual journey through our agricultural practices, innovations,
             and green landscapes.
           </p>
