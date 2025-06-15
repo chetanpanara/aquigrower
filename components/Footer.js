@@ -81,19 +81,19 @@ const Footer = () => {
             </h3>
             <nav className="space-y-3">
               <Link
-                href=""
+                href={"/"}
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Home
               </Link>
               <Link
-                href=""
+                href={"/about"}
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 About Us
               </Link>
               <Link
-                href=""
+                href={"/services"}
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Services
@@ -105,13 +105,13 @@ const Footer = () => {
                 Projects
               </Link>
               <Link
-                href=""
+                href={"/blogs"}
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Blogs
               </Link>
               <Link
-                href=""
+                href={"/contact"}
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Contact Us

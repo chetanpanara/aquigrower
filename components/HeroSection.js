@@ -8,28 +8,28 @@ const HeroSection = () => {
   // Array of video sources and content - replace with your actual video paths and content
   const slides = [
     {
-      video: "./hero.mp4",
+      video: "./videos/hero.mp4",
       title: "Sustainable Agriculture & Organic Farming",
       subtitle: "Family Farmer",
       description:
         "Cultivating essential food crops using purely organic farming methods to produce healthy, chemical-free food for local consumption, contributing to food security and public health.",
     },
     {
-      video: "./hero2.mp4",
+      video: "./videos/hero2.mp4",
       title: " Hydroponics Systems",
       subtitle: "Eco-Friendly Solutions",
       description:
         "Utilizing hydroponic technology to cultivate a diverse range of herbs, including traditional Indian varieties, exotic culinary herbs, and valuable medicinal plants.",
     },
     {
-      video: "./hero3.mp4",
+      video: "./videos/hero3.mp4",
       title: " Afforestation Initiatives",
       subtitle: "Pure & Natural",
       description:
         "  Actively engaging in afforestation and ecological restoration projects to enhance green cover and promote biodiversity through Miyawaki Forests and Social Forestry.",
     },
     {
-      video: "./hero4.mp4",
+      video: "./videos/hero4.mp4",
       title: " Extension & Awareness Programs",
       subtitle: "Growing Together",
       description:
@@ -41,7 +41,7 @@ const HeroSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentVideo((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [slides.length]);
