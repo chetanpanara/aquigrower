@@ -198,7 +198,7 @@ const SustainableAgriculturePage = () => {
           
           {/* More dramatic heading with highlighted text */}
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-10 drop-shadow-lg leading-tight">
-            Returning to <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-200 to-emerald-300 drop-shadow-none">Nature's Wisdom</span>
+            Returning to <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-200 to-emerald-300 drop-shadow-none">Natures Wisdom</span>
           </h2>
           
           <p className="text-white/90 text-xl md:text-2xl mb-12 leading-relaxed max-w-3xl font-light drop-shadow-md">
@@ -257,7 +257,7 @@ const SustainableAgriculturePage = () => {
           
           <h2 className="text-3xl md:text-4xl font-bold text-center text-green-800 mb-6">Our Sustainable Approach</h2>
           <p className="text-xl text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
-            We combine traditional farming wisdom with modern sustainable practices to grow food that's 
+            We combine traditional farming wisdom with modern sustainable practices to grow food thats 
             healthy for people and the planet. Our methods focus on building soil health, conserving water,
             and supporting biodiversity.
           </p>
@@ -539,7 +539,7 @@ const SustainableAgriculturePage = () => {
           <div className="px-8 py-16 md:py-20 md:px-16 text-center text-white relative z-10">
             <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Join Our Sustainable Agriculture Movement</h2>
             <p className="text-xl mb-10 max-w-2xl mx-auto opacity-90">
-              Whether you're looking to source organic produce, learn farming techniques, or partner with us,
+              Whether you are looking to source organic produce, learn farming techniques, or partner with us,
               we welcome your interest in building a more sustainable food system.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
