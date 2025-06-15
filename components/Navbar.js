@@ -30,7 +30,7 @@ export default function Navbar() {
         },
         {
           name: "Environmental Activity & Afforestation Initiatives",
-          href: "/services/Environmental",
+          href: "/services/environmental",
         },
         {
           name: "Extension Activity & Awareness for Sustainable Practices",
@@ -86,7 +86,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 md:absolute md:left-0 flex items-center space-x-2">
             <Link href="/" className="flex items-center mx-4">
               <img
-                src="./img/logo.png"
+                src="/img/logo.png"
                 alt="AquiGrower Logo"
                 className="h-15 w-15 lg:hidden md:block "
               />

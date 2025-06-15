@@ -159,7 +159,7 @@ const Footer = () => {
           </div>
 
           {/* Discover Section */}
-          <div className="lg:col-span-1">
+          {/* <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
               Our Projects
             </h3>
@@ -195,10 +195,10 @@ const Footer = () => {
                 Career
               </Link>
             </nav>
-          </div>
+          </div> */}
 
           {/* Follow Us Section */}
-          {/* <div className="lg:col-span-1">
+          <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
               Follow Us
             </h3>
@@ -236,7 +236,7 @@ const Footer = () => {
                 Twitter
               </Link>
             </nav>
-          </div> */}
+          </div>
         </div>
 
         {/* Footer Bottom */}

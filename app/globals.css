@@ -30,7 +30,7 @@
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Add this to your global CSS */
+/*For global font  */
 .font-poppins {
   font-family: 'Poppins', sans-serif;
 }
