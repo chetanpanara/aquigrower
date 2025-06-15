@@ -39,8 +39,8 @@ export default function Navbar() {
       ],
     },
     { name: "Projects", href: "/projects" },
-    { name: "Blogs", href: "/blogs" },
     { name: "Gallary", href: "/gallary" },
+    { name: "Blogs", href: "/blogs" },
     { name: "Contact", href: "/contact" },
   ];
 

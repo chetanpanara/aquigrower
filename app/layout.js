@@ -18,9 +18,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body
-        style={{ fontFamily: "Poppins, sans-serif" }}
-      >
+      <body className="font-poppins">
         <Navbar />
         {children}
         <Footer/>

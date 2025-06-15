@@ -410,11 +410,11 @@ const GalleryPage = () => {
 
             <div className="text-center mb-12">
               <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
-                <span className="text-gray-800">Gallery </span>
                 <span className="text-green-500 relative">
                   Photos
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
                 </span>
+                <span className="text-gray-800"> Gallery </span>
               </h1>
               <p className="text-md text-gray-600 mt-6">
                 A visual journey through our agricultural practices, innovations,
