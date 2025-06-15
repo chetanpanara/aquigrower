@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import {
-  Leaf,
   Target,
   Eye,
   Award,
@@ -15,21 +14,7 @@ import Image from "next/image";
 
 
 export default function About() {
-  // Fade-in animation on scroll
-  useEffect(() => {
-    const fadeEls = document.querySelectorAll(".fade-in-up");
-    const onScroll = () => {
-      fadeEls.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 60) {
-          el.classList.add("opacity-100", "translate-y-0");
-        }
-      });
-    };
-    window.addEventListener("scroll", onScroll);
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+
 
     // Testimonials slider state
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -162,10 +147,10 @@ export default function About() {
           <source src="./videos/about-bg.mp4" type="video/mp4" alt="no found" />
         </video>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-bold fade-in-up">
-            Welcome to Aqui Grower LLP
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold ">
+            About AquiGrower LLP
           </h1>
-          <p className="mt-4 max-w-2xl text-lg md:text-xl fade-in-up">
+          <p className="mt-4 max-w-2xl text-lg md:text-xl">
             Be Advanced, Be Natural – Serving for a Sustainable Society
           </p>
         </div>
@@ -224,6 +209,7 @@ export default function About() {
                   </span>
                 </h1>
               </div>
+
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
                 Founded by a team of agricultural scientists and technology
                 experts, AgriTech Solutions emerged from a shared vision to
@@ -251,6 +237,7 @@ export default function About() {
                 </div>
               </div>
             </div>
+
             <div className="relative">
               <div className="bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl p-8 text-white">
                 <div className="grid grid-cols-2 gap-6">
@@ -272,7 +259,7 @@ export default function About() {
 
         {/* Mission & Vision Section */}
         <section>
-          <div className="grid lg:grid-cols-2 gap-6 mt-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 mt-12">
             {/* Mission */}
             <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="flex items-center mb-4">
@@ -337,7 +324,7 @@ export default function About() {
                           .map((testimonial) => (
                             <div
                               key={testimonial.id}
-                              className="bg-white rounded-xl shadow-lg p-4 relative"
+                              className="bg-white rounded-xl shadow-sm p-4 relative"
                             >
                               {/* Quote Icon */}
                               <div className="absolute top-3 left-3 text-green-200">
@@ -395,21 +382,11 @@ export default function About() {
                       key={`mobile-${testimonial.id}`}
                       className="w-full flex-shrink-0"
                     >
-                      <div className="bg-white rounded-xl shadow-lg p-4 relative max-w-sm mx-auto">
+                      <div className="bg-white rounded-xl shadow-sm p-4 relative max-w-sm mx-auto">
                         {/* Quote Icon */}
                         <div className="absolute top-3 left-3 text-green-200">
                           <Quote className="w-5 h-5" />
                         </div>
-
-                        {/* Rating */}
-                        <div className="flex justify-center mb-3 pt-3">
-                          {renderStars(testimonial.rating)}
-                        </div>
-
-                        {/* Testimonial Text */}
-                        <blockquote className="text-sm text-gray-700 mb-4 leading-relaxed italic text-center">
-                          {testimonial.content}
-                        </blockquote>
 
                         {/* Author Section */}
                         <div className="flex flex-col items-center">
@@ -433,6 +410,16 @@ export default function About() {
                             </p>
                           </div>
                         </div>
+
+                        {/* Rating */}
+                        <div className="flex justify-center mb-3 pt-3">
+                          {renderStars(testimonial.rating)}
+                        </div>
+
+                        {/* Testimonial Text */}
+                        <blockquote className="text-sm text-gray-700 mb-4 leading-relaxed italic text-center">
+                          {testimonial.content}
+                        </blockquote>
                       </div>
                     </div>
                   ))}
@@ -461,14 +448,6 @@ export default function About() {
 
       {/* Fade-in animation styles and extra styles for flip cards and modal */}
       <style jsx>{`
-        .fade-in-up {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        .fade-in-up.opacity-100 {
-          opacity: 1 !important;
-          transform: translateY(0) !important;
-        }
         .parallax-bg {
           background-attachment: fixed;
           background-size: cover;
