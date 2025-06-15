@@ -11,6 +11,7 @@ import {
   Star,
   Quote,
 } from "lucide-react";
+import Image from "next/image";
 
 
 export default function About() {
@@ -30,30 +31,6 @@ export default function About() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Modal state for team bios
-  const [modal, setModal] = useState({ open: false, member: null });
-  const teamData = {
-    jay: {
-      title: "Mr. Jay Patel",
-      role: "Founder & CEO",
-      bio: "Visionary behind Aqui Grower LLP. With a deep understanding of organic farming, Jay aims to revolutionize the agriculture sector through sustainability and innovation.",
-      img: "/img/founder1.jpg",
-    },
-    rina: {
-      title: "Ms. Rina Shah",
-      role: "Co-Founder",
-      bio: "Rina specializes in hydroponics and agro-tech. Her efforts have helped Aqui Grower reach urban sectors with innovative farming methods.",
-      img: "/img/founder2.jpg",
-    },
-    karan: {
-      title: "Mr. Karan Desai",
-      role: "Managing Director",
-      bio: "Karan leads execution of projects, ensures quality, and connects with local farming communities to deliver results aligned with our core values.",
-      img: "/img/founder3.jpg",
-    },
-  };
-
-
     // Testimonials slider state
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -66,7 +43,7 @@ export default function About() {
         image:
           "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
         content:
-          "This agricultural solution has transformed our farming operations. We've seen a 40% increase in crop yield and significantly reduced our operational costs.",
+          "This agricultural solution has transformed our farming operations. We have seen a 40% increase in crop yield and significantly reduced our operational costs.",
         rating: 5,
       },
       {
@@ -77,7 +54,7 @@ export default function About() {
         image:
           "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
         content:
-          "As a consultant working with over 200 farms, I can confidently say this is the most comprehensive agricultural platform I've encountered.",
+          "As a consultant working with over 200 farms, I can confidently say this is the most comprehensive agricultural platform I have encountered.",
         rating: 5,
       },
       {
@@ -88,7 +65,7 @@ export default function About() {
         image:
           "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
         content:
-          "We've reduced water usage by 30% while maintaining excellent crop quality. This platform is essential for modern farming.",
+          "We have reduced water usage by 30% while maintaining excellent crop quality. This platform is essential for modern farming.",
         rating: 5,
       },
       {
@@ -110,7 +87,7 @@ export default function About() {
         image:
           "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
         content:
-          "The precision agriculture tools are incredibly accurate. We've optimized our fertilizer usage and seen remarkable improvements in soil health.",
+          "The precision agriculture tools are incredibly accurate. We have optimized our fertilizer usage and seen remarkable improvements in soil health.",
         rating: 5,
       },
       {
@@ -198,13 +175,14 @@ export default function About() {
         {/* About Content */}
         <section>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <img
-              src="./img/organic-farm.jpg"
+            <Image
+              src="/img/organic-farm.jpg"
               alt="Organic Farm"
-              className="rounded-xl shadow-lg fade-in-up opacity-0 translate-y-5  duration-700 hover:scale-105 hover:shadow-2xl hover:brightness-110 transition-transform "
-              // Added hover effects
+              width={600}
+              height={400}
+              className="rounded-xl shadow-lg duration-700 hover:scale-105 hover:shadow-2xl hover:brightness-110 transition-transform"
             />
-            <div className="space-y-6 fade-in-up opacity-0 translate-y-5 transition-all duration-700">
+            <div className="space-y-6 transition-all duration-700">
               <div className="text-start mb-12">
                 <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
                   <span className="text-gray-800">About </span>
@@ -217,7 +195,7 @@ export default function About() {
               <p className="text-gray-700 text-lg leading-relaxed">
                 Based in Ahmedabad, Aqui Grower LLP was founded in January 2021
                 with a mission to make sustainable and organic agriculture
-                accessible to everyone. We are dedicated to serving humanity's
+                accessible to everyone. We are dedicated to serving humanitys
                 basic needs through organic farming, hydroponics, and
                 environmental activities.
               </p>
@@ -253,10 +231,10 @@ export default function About() {
                 innovation.
               </p>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                Starting with a small pilot project in rural communities, we've
-                grown to serve thousands of farmers across multiple regions,
-                providing them with tools and knowledge to thrive in today's
-                challenging agricultural landscape.
+                Starting with a small pilot project in rural communities, we
+                have grown to serve thousands of farmers across multiple
+                regions, providing them with tools and knowledge to thrive in
+                todays challenging agricultural landscape.
               </p>
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <div className="text-center">
@@ -328,221 +306,6 @@ export default function About() {
                 communities worldwide.
               </p>
             </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section>
-          <div className="text-center my-12">
-            <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
-              <span className="text-gray-800"> Meet Our </span>
-              <span className="text-green-500 relative">
-                Team
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
-              </span>
-            </h1>
-            <p className="text-md text-gray-600 mt-6">
-              Have a question or want to work together? We are here to help and
-              would love to hear from you.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {["jay", "rina", "karan"].map((key) => (
-              <div
-                key={key}
-                className="bg-white shadow-xl rounded-xl overflow-hidden cursor-pointer hover:shadow-2xl transition"
-                onClick={() => setModal({ open: true, member: key })}
-              >
-                <img
-                  src={teamData[key].img}
-                  className="w-full h-72 object-cover transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110"
-                  alt={teamData[key].title}
-                />
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-semibold">
-                    {teamData[key].title}
-                  </h3>
-                  <p className="text-green-600">{teamData[key].role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Projects Showcase */}
-        <section>
-          <div className="text-center my-12">
-            <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
-              <span className="text-gray-800">Key </span>
-              <span className="text-green-500 relative">
-                Projects
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
-              </span>
-            </h1>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 fade-in-up opacity-0 translate-y-5 transition-all duration-700">
-            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-              <img
-                src="/img/project1.jpg"
-                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110"
-                alt="Project 1"
-              />
-              <div className="p-6">
-                <h3 className="font-semibold text-xl">Reliance LTD</h3>
-                <p>Indoor & Outdoor Hydroponics Demonstration Unit</p>
-              </div>
-            </div>
-            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-              <img
-                src="/img/project2.jpg"
-                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110"
-                alt="Project 2"
-              />
-              <div className="p-6">
-                <h3 className="font-semibold text-xl">NDDB</h3>
-                <p>Moringa Plantation, Drying Unit, and Food Forest</p>
-              </div>
-            </div>
-            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-              <img
-                src="/img/project3.jpg"
-                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110"
-                alt="Project 3"
-              />
-              <div className="p-6">
-                <h3 className="font-semibold text-xl">
-                  RUBAMIN PVT LTD, HALOL
-                </h3>
-                <p>
-                  Green Building with herbal plants and climbers and Terrace
-                  Fruit Orchards Farming
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Farming Gallery Flip Cards */}
-        <section>
-          <div className="text-center my-12">
-            <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
-              <span className="text-gray-800"> Our Farming </span>
-              <span className="text-green-500 relative">
-                Gallery
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
-              </span>
-            </h1>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {/* Card 1 */}
-            <div className="flip-card bg-transparent w-full h-64 mx-auto hover:shadow-2xl transition-shadow">
-              <div className="flip-inner w-full h-full">
-                <div className="flip-front bg-white shadow-lg rounded-lg overflow-hidden">
-                  <img
-                    src="/img/fgallery1.jpg"
-                    className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105 hover:brightness-110"
-                    alt="Gallery Image 1"
-                  />
-                </div>
-                <div className="flip-back bg-green-100 p-6 rounded-lg flex flex-col justify-center items-center h-full">
-                  <h3 className="text-xl font-semibold text-green-700">
-                    Organic Spinach Beds
-                  </h3>
-                  <p className="text-gray-700 mt-2">
-                    Our certified organic produce nurtured without chemicals.
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* Card 2 */}
-            <div className="flip-card bg-transparent w-full h-64 mx-auto hover:shadow-2xl transition-shadow">
-              <div className="flip-inner w-full h-full">
-                <div className="flip-front bg-white shadow-lg rounded-lg overflow-hidden">
-                  <img
-                    src="/img/fgallery2.jpg"
-                    className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105 hover:brightness-110"
-                    alt="Gallery Image 2"
-                  />
-                </div>
-                <div className="flip-back bg-green-100 p-6 rounded-lg flex flex-col justify-center items-center h-full">
-                  <h3 className="text-xl font-semibold text-green-700">
-                    Hydroponic System
-                  </h3>
-                  <p className="text-gray-700 mt-2">
-                    Efficient water-based farming system used across our units.
-                  </p>
-                </div>
-              </div>
-            </div>
-            {/* Card 3 */}
-            <div className="flip-card bg-transparent w-full h-64 mx-auto hover:shadow-2xl transition-shadow">
-              <div className="flip-inner w-full h-full">
-                <div className="flip-front bg-white shadow-lg rounded-lg overflow-hidden">
-                  <img
-                    src="/img/fgallery3.jpg"
-                    className="w-full h-64 object-cover transition-transform duration-300 hover:scale-105 hover:brightness-110"
-                    alt="Gallery Image 3"
-                  />
-                </div>
-                <div className="flip-back bg-green-100 p-6 rounded-lg flex flex-col justify-center items-center h-full">
-                  <h3 className="text-xl font-semibold text-green-700">
-                    Field Team at Work
-                  </h3>
-                  <p className="text-gray-700 mt-2">
-                    The real heroes making each harvest successful.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Gallery Section */}
-        <section>
-          <div className="text-center my-12">
-            <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
-              <span className="text-gray-800">Photos </span>
-              <span className="text-green-500 relative">
-                Gallery
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
-              </span>
-            </h1>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <img
-              src="/img/gallery1.jpg"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110"
-              alt="Gallery 1"
-            />
-            <img
-              src="/img/gallery2.jpg"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110"
-              alt="Gallery 2"
-            />
-            <img
-              src="/img/gallery3.jpg"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110"
-              alt="Gallery 3"
-            />
-            <img
-              src="/img/gallery4.jpg"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110"
-              alt="Gallery 4"
-            />
-            <img
-              src="/img/gallery5.jpg"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110"
-              alt="Gallery 5"
-            />
-            <img
-              src="/img/gallery6.jpg"
-              className="rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:brightness-110"
-              alt="Gallery 6"
-            />
           </div>
         </section>
 
@@ -695,50 +458,6 @@ export default function About() {
           </div>
         </section>
       </div>
-
-      {/* Modal Popups for Team */}
-      {modal.open && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div
-            className="modal-bg absolute inset-0"
-            onClick={() => setModal({ open: false, member: null })}
-          ></div>
-          <div className="bg-white w-11/12 md:w-1/2 lg:w-1/3 rounded-xl shadow-lg z-10 p-6 text-center">
-            <img
-              src={teamData[modal.member].img}
-              alt={teamData[modal.member].title}
-              className="w-32 h-32 object-cover rounded-full mx-auto mb-4 transition-transform duration-300 hover:scale-110 hover:ring-4 hover:ring-green-300"
-            />
-            <h3 className="text-2xl font-bold text-green-700 mb-2">
-              {teamData[modal.member].title}
-            </h3>
-            <p className="text-green-600 mb-4">{teamData[modal.member].role}</p>
-            <p className="text-gray-700">{teamData[modal.member].bio}</p>
-            <button
-              onClick={() => setModal({ open: false, member: null })}
-              className="mt-6 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Contact Call to Action */}
-      <section className="bg-green-600 text-white py-12 text-center fade-in-up opacity-0 translate-y-5 transition-all duration-700">
-        <h2 className="text-3xl font-bold">
-          Join Us In Building a Greener Tomorrow
-        </h2>
-        <p className="mt-2">
-          Partner with us or learn more about our mission and services.
-        </p>
-        <Link
-          href="/contact"
-          className="mt-4 inline-block bg-white text-green-700 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-all"
-        >
-          Contact Us
-        </Link>
-      </section>
 
       {/* Fade-in animation styles and extra styles for flip cards and modal */}
       <style jsx>{`

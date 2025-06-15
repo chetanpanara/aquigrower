@@ -2,32 +2,10 @@
 import HeroSection from "@/components/HeroSection";
 import Contact from "./contact/page";
 import AgricultureBlog from "./blogs/page";
-import {
-  Target,
-  Eye,
-  Award,
-  Users,
-} from "lucide-react";
-import { useEffect } from "react";
+import { Target, Eye, Award, Users } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
-
-    // Fade-in animation on scroll
-    useEffect(() => {
-      const fadeEls = document.querySelectorAll(".fade-in-up");
-      const onScroll = () => {
-        fadeEls.forEach((el) => {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight - 60) {
-            el.classList.add("opacity-100", "translate-y-0");
-          }
-        });
-      };
-      window.addEventListener("scroll", onScroll);
-      onScroll();
-      return () => window.removeEventListener("scroll", onScroll);
-    }, []);
-
   return (
     <>
       <HeroSection />
@@ -35,13 +13,14 @@ export default function Home() {
         {/* About Content */}
         <section>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <img
-              src="./img/organic-farm.jpg"
+            <Image
+              src="/img/organic-farm.jpg"
               alt="Organic Farm"
-              className="rounded-xl shadow-lg fade-in-up opacity-0 translate-y-5  duration-700 hover:scale-105 hover:shadow-2xl hover:brightness-110 transition-transform "
-              // Added hover effects
+              width={600}
+              height={400}
+              className="rounded-xl shadow-lg duration-700 hover:scale-105 hover:shadow-2xl hover:brightness-110 transition-transform"
             />
-            <div className="space-y-6 fade-in-up opacity-0 translate-y-5 transition-all duration-700">
+            <div className="space-y-6 transition-all duration-700">
               <div className="text-start mb-12">
                 <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
                   <span className="text-gray-800">About </span>
@@ -54,7 +33,7 @@ export default function Home() {
               <p className="text-gray-700 text-lg leading-relaxed">
                 Based in Ahmedabad, Aqui Grower LLP was founded in January 2021
                 with a mission to make sustainable and organic agriculture
-                accessible to everyone. We are dedicated to serving humanity's
+                accessible to everyone. We are dedicated to serving humanitys
                 basic needs through organic farming, hydroponics, and
                 environmental activities.
               </p>
@@ -90,10 +69,10 @@ export default function Home() {
                 innovation.
               </p>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                Starting with a small pilot project in rural communities, we've
-                grown to serve thousands of farmers across multiple regions,
-                providing them with tools and knowledge to thrive in today's
-                challenging agricultural landscape.
+                Starting with a small pilot project in rural communities, we
+                have grown to serve thousands of farmers across multiple
+                regions, providing them with tools and knowledge to thrive in
+                todays challenging agricultural landscape.
               </p>
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <div className="text-center">
@@ -127,6 +106,8 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          
         </section>
 
         {/* Mission & Vision Section */}
