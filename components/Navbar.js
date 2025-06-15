@@ -79,7 +79,7 @@ export default function Navbar() {
   const isServicesActive = pathname.startsWith("/services");
 
   return (
-    <nav className="bg-white/60 backdrop-blur-md fixed w-full rounded-b-2xl top-0 z-50 border-b border-gray-100/30 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)]">
+    <nav className="bg-white/90 backdrop-blur-md fixed w-full rounded-b-2xl top-0 z-50 border-b border-gray-100/30 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-18 md:justify-center md:relative">
           {/* Logo - positioned absolutely on desktop to keep menu centered */}
