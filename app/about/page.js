@@ -374,7 +374,7 @@ export default function About() {
 
                               {/* Testimonial Text */}
                               <blockquote className="text-sm text-gray-700 mb-4 leading-relaxed italic text-center line-clamp-3">
-                                "{testimonial.content}"
+                                {testimonial.content}
                               </blockquote>
                             </div>
                           ))}
@@ -408,7 +408,7 @@ export default function About() {
 
                         {/* Testimonial Text */}
                         <blockquote className="text-sm text-gray-700 mb-4 leading-relaxed italic text-center">
-                          "{testimonial.content}"
+                          {testimonial.content}
                         </blockquote>
 
                         {/* Author Section */}
