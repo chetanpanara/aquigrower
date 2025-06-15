@@ -147,8 +147,8 @@ export default function About() {
           <source src="./videos/about-bg.mp4" type="video/mp4" alt="no found" />
         </video>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold ">
-            About AquiGrower LLP
+          <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold">
+            About AquiGrower
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl">
             Be Advanced, Be Natural – Serving for a Sustainable Society
