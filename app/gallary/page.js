@@ -1,12 +1,25 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const GalleryPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [filteredImages, setFilteredImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Refs for GSAP animations
+  const galleryRef = useRef(null);
+  const itemsRef = useRef([]);
+  const headerRef = useRef(null);
+  const modalRef = useRef(null);
 
   // Gallery data with size variants for masonry layout
   const galleryData = [
@@ -109,6 +122,105 @@ const GalleryPage = () => {
       description: "Knowledge sharing sessions with local farming community",
       size: "medium",
     },
+    {
+      id: 13,
+      src: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80",
+      category: "organic-farming",
+      title: "Organic Vegetable Garden",
+      description:
+        "Sustainable cultivation of organic vegetables using traditional farming methods",
+      size: "large", // Will span 2 columns and 2 rows
+    },
+    {
+      id: 14,
+      src: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80",
+      category: "hydroponics",
+      title: "Modern Hydroponic System",
+      description:
+        "Advanced soilless cultivation technology for herbs and leafy greens",
+      size: "medium", // Regular size
+    },
+    {
+      id: 15,
+      src: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=800&q=80",
+      category: "afforestation",
+      title: "Miyawaki Forest Initiative",
+      description: "Dense native forest plantation for ecological restoration",
+      size: "medium",
+    },
+    {
+      id: 16,
+      src: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&q=80",
+      category: "extension",
+      title: "Community Training Program",
+      description: "Educating farmers on sustainable agricultural practices",
+      size: "wide", // Will span 2 columns
+    },
+    {
+      id: 17,
+      src: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&q=80",
+      category: "organic-farming",
+      title: "Traditional Crop Cultivation",
+      description: "Growing essential food crops without chemical fertilizers",
+      size: "medium",
+    },
+    {
+      id: 18,
+      src: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=800&q=80",
+      category: "hydroponics",
+      title: "Greenhouse Hydroponics",
+      description:
+        "Controlled environment agriculture for year-round production",
+      size: "tall", // Will span 2 rows
+    },
+    {
+      id: 19,
+      src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
+      category: "afforestation",
+      title: "Biodiversity Conservation",
+      description: "Protecting and enhancing local ecosystem diversity",
+      size: "medium",
+    },
+    {
+      id: 20,
+      src: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&q=80",
+      category: "extension",
+      title: "Field Demonstration",
+      description: "Hands-on training for modern farming techniques",
+      size: "medium",
+    },
+    {
+      id: 21,
+      src: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80",
+      category: "organic-farming",
+      title: "Organic Herb Garden",
+      description: "Medicinal and culinary herbs grown organically",
+      size: "wide",
+    },
+    {
+      id: 22,
+      src: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&q=80",
+      category: "hydroponics",
+      title: "Vertical Growing Systems",
+      description: "Space-efficient vertical hydroponic installations",
+      size: "medium",
+    },
+    {
+      id: 23, // Fixed: Changed from id: 13 to id: 23
+      src: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80",
+      category: "afforestation",
+      title: "Native Tree Plantation",
+      description: "Restoring natural forest cover with indigenous species",
+      size: "tall",
+    },
+    {
+      id: 24,
+      src: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80",
+      category: "extension",
+      title: "Agricultural Workshop",
+      description: "Knowledge sharing sessions with local farming community",
+      size: "medium",
+    },
   ];
 
   const filterCategories = [
@@ -133,17 +245,145 @@ const GalleryPage = () => {
     }, 300);
   }, [activeFilter]);
 
+  // Initialize GSAP animations
+  useEffect(() => {
+    if (!isLoading && filteredImages.length > 0) {
+      // Reset refs array to match filtered images
+      itemsRef.current = itemsRef.current.slice(0, filteredImages.length);
+
+      // Animate gallery items when they first appear
+      gsap.fromTo(
+        itemsRef.current,
+        {
+          opacity: 0,
+          y: 40,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: "power2.out",
+        }
+      );
+
+      // Header animation
+      if (headerRef.current) {
+        gsap.fromTo(
+          headerRef.current,
+          { opacity: 0, y: -20 },
+          { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+        );
+      }
+    }
+  }, [filteredImages, isLoading]);
+
+  // Add repeated scroll animations
+  useEffect(() => {
+    if (!isLoading && filteredImages.length > 0) {
+      // Clear any existing ScrollTriggers to avoid duplicates
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+      // Create new scroll animations for each image
+      itemsRef.current.forEach((item, index) => {
+        if (!item) return;
+
+        // Choose a random animation effect for variety
+        const effectType = index % 4;
+
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top bottom-=100",
+          onEnter: () => {
+            // Apply different effects based on the item's index
+            switch (effectType) {
+              case 0: // Scale effect
+                gsap.fromTo(
+                  item,
+                  { scale: 0.9, opacity: 0.7 },
+                  { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.4)" }
+                );
+                break;
+              case 1: // Rotation effect
+                gsap.fromTo(
+                  item,
+                  { rotation: -5, opacity: 0.7 },
+                  { rotation: 0, opacity: 1, duration: 0.5, ease: "elastic.out(1, 0.5)" }
+                );
+                break;
+              case 2: // Slide up effect
+                gsap.fromTo(
+                  item,
+                  { y: 20, opacity: 0.7 },
+                  { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }
+                );
+                break;
+              case 3: // Slide in from side effect
+                gsap.fromTo(
+                  item,
+                  { x: index % 2 === 0 ? -20 : 20, opacity: 0.7 },
+                  { x: 0, opacity: 1, duration: 0.4, ease: "power2.out" }
+                );
+                break;
+            }
+          },
+          // Also animate when scrolling back up
+          onEnterBack: () => {
+            gsap.fromTo(
+              item,
+              { scale: 0.9, opacity: 0.7 },
+              { scale: 1, opacity: 1, duration: 0.4, ease: "power2.out" }
+            );
+          },
+          // Critical: set once to false so animations repeat every time
+          once: false,
+        });
+      });
+    }
+
+    // Cleanup function to remove ScrollTriggers when component unmounts
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [filteredImages, isLoading]);
+
   const openModal = (image) => {
     setSelectedImage(image);
     document.body.style.overflow = "hidden";
+
+    // Animate modal opening with GSAP
+    setTimeout(() => {
+      if (modalRef.current) {
+        gsap.fromTo(
+          modalRef.current,
+          { opacity: 0, scale: 0.9 },
+          { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }
+        );
+      }
+    }, 10);
   };
 
   const closeModal = () => {
-    setSelectedImage(null);
-    document.body.style.overflow = "unset";
+    // Animate modal closing with GSAP
+    if (modalRef.current) {
+      gsap.to(modalRef.current, {
+        opacity: 0,
+        scale: 0.9,
+        duration: 0.2,
+        ease: "power2.in",
+        onComplete: () => {
+          setSelectedImage(null);
+          document.body.style.overflow = "unset";
+        },
+      });
+    } else {
+      setSelectedImage(null);
+      document.body.style.overflow = "unset";
+    }
   };
 
-  const getSizeClasses = (size) => {
+  const getSizeClasses = (size, index) => {
+    // Use index to help balance the layout
     switch (size) {
       case "large":
         return "col-span-2 row-span-2";
@@ -152,6 +392,10 @@ const GalleryPage = () => {
       case "tall":
         return "col-span-1 row-span-2";
       default:
+        // For medium items, make every 5th one wide to help fill gaps
+        if (index % 5 === 0) {
+          return "col-span-2 row-span-1";
+        }
         return "col-span-1 row-span-1";
     }
   };
@@ -160,8 +404,7 @@ const GalleryPage = () => {
     <>
       {/* Filter Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16">
-
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" ref={headerRef}>
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Gallery</h2>
           <p className="text-md text-gray-600 mb-8">
             A visual journey through our agricultural practices, innovations,
@@ -186,7 +429,7 @@ const GalleryPage = () => {
           ))}
         </div>
 
-        {/* Masonry Gallery Grid */}
+        {/* Masonry Gallery Grid with GSAP animations */}
         {isLoading ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 auto-rows-[200px]">
             {[...Array(8)].map((_, index) => (
@@ -197,14 +440,18 @@ const GalleryPage = () => {
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 auto-rows-[200px]">
+          <div
+            ref={galleryRef}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 auto-rows-[200px] grid-auto-flow-dense"
+          >
             {filteredImages.map((image, index) => (
               <div
                 key={image.id}
-                className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer animate-fade-in-up ${getSizeClasses(
-                  image.size
+                ref={(el) => (itemsRef.current[index] = el)}
+                className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer ${getSizeClasses(
+                  image.size,
+                  index
                 )}`}
-                style={{ animationDelay: `${index * 100}ms` }}
                 onClick={() => openModal(image)}
               >
                 <div className="w-full h-full overflow-hidden">
@@ -265,10 +512,10 @@ const GalleryPage = () => {
         )}
       </div>
 
-      {/* Modal */}
+      {/* Modal with GSAP animations */}
       {selectedImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm animate-fade-in">
-          <div className="relative max-w-4xl max-h-[90vh] m-4 animate-scale-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
+          <div ref={modalRef} className="relative max-w-4xl max-h-[90vh] m-4">
             <button
               onClick={closeModal}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
@@ -306,104 +553,6 @@ const GalleryPage = () => {
           </div>
         </div>
       )}
-
-      {/* Custom Styles */}
-      <style jsx>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slide-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes scale-in {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-
-        @keyframes float-delayed {
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-15px) rotate(5deg);
-          }
-        }
-
-        .animate-fade-in {
-          animation: fade-in 1s ease-out;
-        }
-
-        .animate-slide-up {
-          animation: slide-up 1s ease-out 0.3s both;
-        }
-
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out both;
-        }
-
-        .animate-scale-in {
-          animation: scale-in 0.3s ease-out;
-        }
-
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-float-delayed {
-          animation: float-delayed 8s ease-in-out infinite;
-        }
-
-        .line-clamp-2 {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      `}</style>
     </>
   );
 };
