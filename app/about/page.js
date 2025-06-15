@@ -53,8 +53,8 @@ export default function About() {
           playsInline
           className="absolute w-full h-full object-cover"
         >
-          {/* Make sure this video exists in your public/videos directory */}
-          <source src="/videos/about-bg.mp4" type="video/mp4" />
+          {/* Place about-bg.mp4 in /public directory and use this path */}
+          <source src="/about-bg.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white px-4">
           <h1 className="text-5xl md:text-6xl font-bold fade-in-up">
@@ -145,14 +145,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* Parallax Banner - Fix the path by removing 'public/' */}
+      {/* Parallax Banner - Use correct public path for Next.js */}
       <section
         className="h-96 parallax-bg"
         style={{
           backgroundImage: "url('/img/farm-parallax.jpg')",
         }}
       >
-        <div className="h-full flex items-center justify-center bg-black bg-opacity-50">
+        <div className="h-full flex items-center justify-center bg-green-400-300 bg-opacity -50">
           <h2 className="text-4xl text-white font-bold fade-in-up">
             Rooted in Nature, Powered by Innovation
           </h2>
