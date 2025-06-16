@@ -99,7 +99,7 @@ const Footer = () => {
                 Services
               </Link>
               <Link
-                href=""
+                href={"/projects"}
                 className="block text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 Projects
