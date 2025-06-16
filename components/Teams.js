@@ -73,7 +73,7 @@ const Teams = () => {
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
                   {member.name}
                 </h3>
-                <p className="text-gray-800 font-medium mb-1">{member.work}</p>
+                <p className="text-green-600 tracking-wide font-medium mb-1">{member.work}</p>
                 <p className="text-gray-600 text-base sm:text-md leading-relaxed">
                   {member.description}
                 </p>

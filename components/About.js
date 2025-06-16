@@ -1,6 +1,7 @@
 import React from 'react'
-import { Target, Eye, Award, Users } from "lucide-react";
+import { Target, Eye, Award, Users, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from 'next/link';
 
 function About() {
   return (
@@ -14,7 +15,7 @@ function About() {
               alt="Organic Farm"
               width={600}
               height={400}
-              className="rounded-xl shadow-lg duration-700 hover:scale-105 hover:shadow-2xl hover:brightness-110 transition-transform"
+              className="rounded-xl shadow-lg duration-700 hover:scale-105 hover:shadow-lg hover:brightness-110 transition-transform"
             />
             <div className="space-y-6 transition-all duration-700">
               <div className="text-start mb-12">
@@ -141,6 +142,85 @@ function About() {
                 environmental sustainability, and prosperity for farming
                 communities worldwide.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Showcase */}
+        <section>
+          <div className="text-center my-12">
+            <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
+              <span className="text-gray-800">Key </span>
+              <span className="text-green-500 relative">
+                Projects
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
+              </span>
+            </h1>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4  transition-all duration-700">
+            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
+              <img
+                src="/img/project1.jpg"
+                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110"
+                alt="Project 1"
+              />
+              <div className="p-6">
+                <h3 className="font-semibold text-xl">Reliance LTD</h3>
+                <p className="text-gray-700 text-md leading-relaxed">
+                  Indoor & Outdoor Hydroponics Demonstration Unit
+                </p>
+                <Link
+                  href={"/"}
+                  className="mt-4 text-green-600 font-medium hover:text-green-700 flex items-center space-x-1 group-hover:underline"
+                >
+                  <span>Read More</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
+              <img
+                src="/img/project2.jpg"
+                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110"
+                alt="Project 2"
+              />
+              <div className="p-6">
+                <h3 className="font-semibold text-xl">NDDB</h3>
+                <p className="text-gray-700 text-md leading-relaxed">
+                  Moringa Plantation, Drying Unit, and Food Forest
+                </p>
+                <Link
+                  href={"/"}
+                  className="mt-4 text-green-600 font-medium hover:text-green-700 flex items-center space-x-1 group-hover:underline"
+                >
+                  <span>Read More</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
+              <img
+                src="/img/project3.jpg"
+                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110"
+                alt="Project 3"
+              />
+              <div className="p-6">
+                <h3 className="font-semibold text-xl">
+                  RUBAMIN PVT LTD, HALOL
+                </h3>
+                <p className="text-gray-700 text-md leading-relaxed">
+                  Green Building with herbal plants and climbers and Terrace
+                  Fruit Orchards Farming
+                </p>
+                <Link
+                  href={"/"}
+                  className="mt-4 text-green-600 font-medium hover:text-green-700 flex items-center space-x-1 group-hover:underline"
+                >
+                  <span>Read More</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
