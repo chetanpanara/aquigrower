@@ -2,6 +2,7 @@
 import React from "react";
 import Testimonials from "@/components/Testimonials";
 import Aboutcomponent from "@/components/About";
+import Teams from "@/components/Teams";
 
 export default function About() {
   return (
@@ -28,7 +29,8 @@ export default function About() {
         </div>
       </section>
 
-      <Aboutcomponent/>
+      <Aboutcomponent />
+      <Teams />
       <Testimonials />
 
       {/* Fade-in animation styles and extra styles for flip cards and modal */}
