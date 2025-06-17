@@ -150,12 +150,16 @@ function About() {
         <section>
           <div className="text-center my-12">
             <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
-              <span className="text-gray-800">Key </span>
+              <span className="text-gray-800">our featured </span>
               <span className="text-green-500 relative">
                 Projects
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
               </span>
             </h1>
+            <p className="text-md text-gray-600 mt-6">
+              To showcase our completed and ongoing projects, demonstrating our
+              capabilities and achievements
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4  transition-all duration-700">

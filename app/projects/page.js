@@ -14,7 +14,7 @@ const PROJECTS = [
     key: "rsc",
     title: "Regional Science Centre, Patan",
     desc: "Installed six different hydroponic systems for educational demonstration purposes.",
-    img: "/img/project4.jpg",
+    img: "/img/gallery1.jpg",
     category: "hydroponics",
   },
   {
@@ -35,20 +35,20 @@ const PROJECTS = [
     key: "folium",
     title: "Folium Pura",
     desc: "Hydroponic farming of microgreens and exotic herbs using NFT and A-frame systems.",
-    img: "/img/project5.jpg",
+    img: "/img/gallery2.jpg",
     category: "hydroponics",
   },
   {
     key: "urban",
     title: "Urban Farming Projects",
     desc: "Design and setup of custom urban agriculture spaces in various Indian cities.",
-    img: "/img/project6.jpg",
+    img: "/img/gallery4.jpg",
     category: "urban",
   },
 ];
 
 const CATEGORIES = [
-  { key: "all", label: "All" },
+  { key: "all", label: "All Projects" },
   { key: "hydroponics", label: "Hydroponics" },
   { key: "afforestation", label: "Afforestation" },
   { key: "urban", label: "Urban Farming" },
@@ -61,18 +61,31 @@ export default function ProjectsPage() {
   const filtered = filter === "all" ? PROJECTS : PROJECTS.filter(p => p.category === filter);
 
   return (
-    <main className="bg-gray-50 text-gray-800 font-sans min-h-screen">
-      <section className="py-20 px-6 max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-green-700 mb-6">Our Key Projects</h1>
+    <>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
+            <span className="text-gray-800">our featured </span>
+            <span className="text-green-500 relative">
+              Projects
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
+            </span>
+          </h1>
+          <p className="text-md text-gray-600 mt-6">
+            To showcase our completed and ongoing projects, demonstrating our
+            capabilities and achievements
+          </p>
+        </div>
+
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {CATEGORIES.map(cat => (
+        <div className="flex flex-wrap justify-center gap-4 mb-6">
+          {CATEGORIES.map((cat) => (
             <button
               key={cat.key}
-              className={`px-4 py-2 rounded-full transition font-semibold ${
+              className={`px-3 py-2 md:px-5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                 filter === cat.key
-                  ? "bg-green-600 text-white"
-                  : "bg-white text-green-700 border border-green-600 hover:bg-green-100"
+                  ? "bg-green-600 text-white shadow-sm"
+                  : "bg-white text-gray-700 hover:bg-green-50 border border-green-200"
               }`}
               onClick={() => setFilter(cat.key)}
             >
@@ -80,27 +93,38 @@ export default function ProjectsPage() {
             </button>
           ))}
         </div>
+
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map(project => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filtered.map((project) => (
             <div
               key={project.key}
-              className="bg-white shadow-lg rounded-xl p-6 cursor-pointer hover:shadow-2xl transition"
+              className="bg-white shadow-md rounded-xl p-4 cursor-pointer hover:shadow-lg transition"
               onClick={() => setModal(project)}
             >
-              <img src={project.img} className="w-full h-48 object-cover rounded-lg mb-4" alt={project.title} />
+              <img
+                src={project.img}
+                className="w-full h-48 object-cover  rounded-lg mb-4"
+                alt={project.title}
+              />
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p>{project.desc.split(".")[0]}.</p>
+              <p className="text-gray-700 text-md leading-relaxed">
+                {project.desc.split(".")[0]}.
+              </p>
             </div>
           ))}
         </div>
         <p className="mt-16 text-center text-sm text-gray-500">
           For custom project inquiries, email us at{" "}
-          <a href="mailto:aquigrower@gmail.com" className="text-green-600 underline">
+          <a
+            href="mailto:aquigrower@gmail.com"
+            className="text-green-600 underline"
+          >
             aquigrower@gmail.com
           </a>
         </p>
-      </section>
+      </div>
+
       {/* Modal */}
       {modal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
@@ -112,12 +136,18 @@ export default function ProjectsPage() {
             >
               &times;
             </button>
-            <h2 className="text-2xl font-bold text-green-700 mb-2">{modal.title}</h2>
-            <img src={modal.img} className="w-full h-56 object-cover rounded-lg mb-4" alt={modal.title} />
+            <h2 className="text-2xl font-bold text-green-700 mb-2">
+              {modal.title}
+            </h2>
+            <img
+              src={modal.img}
+              className="w-full h-56 object-cover rounded-lg mb-4"
+              alt={modal.title}
+            />
             <p className="text-gray-700">{modal.desc}</p>
           </div>
         </div>
       )}
-    </main>
+    </>
   );
 }
