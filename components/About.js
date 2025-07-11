@@ -18,7 +18,7 @@ function About() {
               className="rounded-xl shadow-lg duration-700 hover:scale-105 hover:shadow-lg hover:brightness-110 transition-transform"
             />
             <div className="space-y-6 transition-all duration-700">
-              <div className="text-start mb-10">
+              <div className="text-start">
                 <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
                   <span className="from-gray-900 via-green-700 to-emerald-500 bg-clip-text text-transparent bg-gradient-to-r relative">
                     About aquigrower
@@ -48,7 +48,7 @@ function About() {
         <section>
           <div className="grid lg:grid-cols-2 gap-12 items-center my-14">
             <div>
-              <div className="text-start mb-10">
+              <div className="text-start mb-8">
                 <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
                   <span className="from-gray-900 via-green-700 to-emerald-500 bg-clip-text text-transparent bg-gradient-to-r relative">
                   our story

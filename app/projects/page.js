@@ -78,7 +78,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
           {CATEGORIES.map((cat) => (
             <button
               key={cat.key}
