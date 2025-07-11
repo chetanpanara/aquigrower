@@ -18,28 +18,26 @@ function About() {
               className="rounded-xl shadow-lg duration-700 hover:scale-105 hover:shadow-lg hover:brightness-110 transition-transform"
             />
             <div className="space-y-6 transition-all duration-700">
-              <div className="text-start mb-12">
+              <div className="text-start mb-10">
                 <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
-                  <span className="text-gray-800">About </span>
-                  <span className="text-green-500 relative">
-                    aquigrower
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
+                  <span className="from-gray-900 via-green-700 to-emerald-500 bg-clip-text text-transparent bg-gradient-to-r relative">
+                    About aquigrower
                   </span>
                 </h1>
               </div>
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-gray-700 leading-relaxed">
                 Based in Ahmedabad, Aqui Grower LLP was founded in January 2021
                 with a mission to make sustainable and organic agriculture
                 accessible to everyone. We are dedicated to serving humanitys
                 basic needs through organic farming, hydroponics, and
                 environmental activities.
               </p>
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-gray-700 leading-relaxed">
                 From Miyawaki Forests to hydroponic solutions and citizen
                 awareness programs, our work spans food security, biodiversity,
                 and education.
               </p>
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-gray-700 leading-relaxed">
                 <strong>GSTIN:</strong> 24ABTFA9566B1Z6
               </p>
             </div>
@@ -52,21 +50,19 @@ function About() {
             <div>
               <div className="text-start mb-10">
                 <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
-                  <span className="text-gray-800">our </span>
-                  <span className="text-green-500 relative">
-                    stroy
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
+                  <span className="from-gray-900 via-green-700 to-emerald-500 bg-clip-text text-transparent bg-gradient-to-r relative">
+                  our story
                   </span>
                 </h1>
               </div>
 
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed mb-6">
                 Founded by a team of agricultural scientists and technology
                 experts, AgriTech Solutions emerged from a shared vision to
                 bridge the gap between traditional farming wisdom and modern
                 innovation.
               </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed mb-6">
                 Starting with a small pilot project in rural communities, we
                 have grown to serve thousands of farmers across multiple
                 regions, providing them with tools and knowledge to thrive in
@@ -120,7 +116,7 @@ function About() {
                   Our Mission
                 </h2>
               </div>
-              <p className="text-gray-700 text-base leading-relaxed mb-4">
+              <p className="text-gray-700  leading-relaxed mb-4">
                 To transform traditional farming practices through cutting-edge
                 technology, providing farmers with intelligent solutions that
                 increase productivity, reduce environmental impact, and ensure
@@ -136,95 +132,12 @@ function About() {
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900">Our Vision</h2>
               </div>
-              <p className="text-gray-700 text-base leading-relaxed mb-4">
+              <p className="text-gray-700  leading-relaxed mb-4">
                 To be the global leader in agricultural innovation, creating a
                 world where smart farming technologies ensure food security,
                 environmental sustainability, and prosperity for farming
                 communities worldwide.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Projects Showcase */}
-        <section>
-          <div className="text-center my-12">
-            <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
-              <span className="text-gray-800">our featured </span>
-              <span className="text-green-500 relative">
-                Projects
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
-              </span>
-            </h1>
-            <p className="text-md text-gray-600 mt-6">
-              To showcase our completed and ongoing projects, demonstrating our
-              capabilities and achievements
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4  transition-all duration-700">
-            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-              <img
-                src="/img/project1.jpg"
-                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110"
-                alt="Project 1"
-              />
-              <div className="p-6">
-                <h3 className="font-semibold text-xl">Reliance LTD</h3>
-                <p className="text-gray-700 text-md leading-relaxed">
-                  Indoor & Outdoor Hydroponics Demonstration Unit
-                </p>
-                <Link
-                  href={"/"}
-                  className="mt-4 text-green-600 font-medium hover:text-green-700 flex items-center space-x-1 group-hover:underline"
-                >
-                  <span>Read More</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-              <img
-                src="/img/project2.jpg"
-                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110"
-                alt="Project 2"
-              />
-              <div className="p-6">
-                <h3 className="font-semibold text-xl">NDDB</h3>
-                <p className="text-gray-700 text-md leading-relaxed">
-                  Moringa Plantation, Drying Unit, and Food Forest
-                </p>
-                <Link
-                  href={"/"}
-                  className="mt-4 text-green-600 font-medium hover:text-green-700 flex items-center space-x-1 group-hover:underline"
-                >
-                  <span>Read More</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-              <img
-                src="/img/project3.jpg"
-                className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:brightness-110"
-                alt="Project 3"
-              />
-              <div className="p-6">
-                <h3 className="font-semibold text-xl">
-                  RUBAMIN PVT LTD, HALOL
-                </h3>
-                <p className="text-gray-700 text-md leading-relaxed">
-                  Green Building with herbal plants and climbers and Terrace
-                  Fruit Orchards Farming
-                </p>
-                <Link
-                  href={"/"}
-                  className="mt-4 text-green-600 font-medium hover:text-green-700 flex items-center space-x-1 group-hover:underline"
-                >
-                  <span>Read More</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
             </div>
           </div>
         </section>

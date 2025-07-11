@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-poppins">
+       
         <Navbar />
         {children}
         <Footer />

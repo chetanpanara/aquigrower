@@ -109,16 +109,14 @@ const AgricultureBlog = () => {
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-16">
-   
+  
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-3xl lg:text-4xl uppercase font-bold tracking-wide">
-            <span className="text-gray-800">agriculture </span>
-            <span className="text-green-500 relative">
-              Blogs
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-green-500 rounded-full transform translate-y-2"></div>
+            <span className="from-gray-900 via-green-700 to-emerald-500 bg-clip-text text-transparent bg-gradient-to-r relative">
+              agriculture Blogs
             </span>
           </h1>
-          <p className="text-md text-gray-600 mt-6">
+          <p className=" text-gray-600 mt-4">
             A digital platform sharing agriculture-related blogs, tips, and
             innovations to empower farmers and enthusiasts with the latest in
             smart and sustainable farming.
